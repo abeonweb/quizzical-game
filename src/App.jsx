@@ -1,22 +1,23 @@
-import React, {useState} from "react"
-import Game from "./Game"
-import StartPage from "./StartPage"
-import blue from "./assets/blue.svg"
-import yellow from "./assets/yellow.svg"
+import StartPage from "./StartPage";
+import { Route, Routes } from "react-router-dom";
+import Layout from "./Layout";
+import Login from "./Login";
+import ScorePage from "./ScorePage";
+import Register from "./Register";
+import Game from "./Game";
 
-export default function App(){
-    const [playGame, setPlayGame] = useState(false)
-
-    function play(){
-        setPlayGame(prevPlayGame => !prevPlayGame)
-    }
-
-    return (
-        <main className="main">
-            {!playGame && <StartPage play={play}/>}
-            {playGame && <Game play={play}/>}
-            <img className="bg--img bg--img--yellow" src={yellow} alt=""/>
-            <img className="bg--img bg--img--blue" src={blue} alt=""/>
-        </main>
-    )
+export default function App() {
+  return (
+    <main className="main">
+      <Routes>
+        <Route path="/quizzical-game" element={<Layout />}>
+          <Route index element={<StartPage />} />
+          <Route path="game" element={<Game />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="score-page" element={<ScorePage />} />
+        </Route>
+      </Routes>
+    </main>
+  );
 }
