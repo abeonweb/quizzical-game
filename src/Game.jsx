@@ -1,31 +1,24 @@
-import React, {useState, useEffect} from "react"
+import React, {useState, useEffect, useContext} from "react"
 import Question from "./Question"
 import { nanoid } from "nanoid"
 import { decode } from "he"
-
+import { GameContext } from "./GameContext"
 
 
 export default function Game(props){
+    const mode = useContext(GameContext);
     const [triviaData, setTriviaData] = useState([])
     const [gameData, setGameData] = useState({tally:0, checked:false})
         
     //get the trivia questions and update trivia data
     useEffect(()=>{
-    fetch("https://opentdb.com/api.php?amount=5&difficulty=medium")
+    fetch(`https://opentdb.com/api.php?amount=10&difficulty=${mode}`)
         .then(res => res.json())
         .then(data =>{
                 const newTriviaObjs=[]
                 const results = data.results
                 //Insert incorrect options and correct option in random position in new array
                 for(let i=0; i < results.length;i++){
-                    // let optionsArray=[]
-                    
-                    // const length = results[i].incorrect_answers.length
-                    // //insert in any random position in the array
-                    // const insertPoint= Math.floor(Math.random()*(length+1))
-                    // optionsArray = new Array(...results[i].incorrect_answers)
-                    // optionsArray.splice(insertPoint, 0, results[i].correct_answer)
-
                     let optionsArray = [...results[i].incorrect_answers, results[i].correct_answer].sort(() => (Math.random() > .5) ? 1 : -1)
 
                     //create an array of objects from each answer array
