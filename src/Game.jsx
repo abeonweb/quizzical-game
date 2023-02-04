@@ -6,13 +6,13 @@ import { GameContext } from "./GameContext"
 
 
 export default function Game(props){
-    const mode = useContext(GameContext);
+    const state = useContext(GameContext);
     const [triviaData, setTriviaData] = useState([])
     const [gameData, setGameData] = useState({tally:0, checked:false})
         
     //get the trivia questions and update trivia data
     useEffect(()=>{
-    fetch(`https://opentdb.com/api.php?amount=10&difficulty=${mode}`)
+    fetch(`https://opentdb.com/api.php?amount=10&difficulty=${state.mode}`)
         .then(res => res.json())
         .then(data =>{
                 const newTriviaObjs=[]
