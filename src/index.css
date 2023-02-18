@@ -8,10 +8,9 @@ h1, p{
   padding: 0;
 }
 
-body, 
+
 #root{
   font-family: "Karla", sans-serif;
-  min-height: 100vh;
   color: #293264;
   display: flex;
   justify-content: center;
@@ -19,14 +18,13 @@ body,
 
 .main{
   margin: 0 auto;
-  min-height: 100vh;
   width: 95%;
   max-width: 550px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 2em;
+  padding: 0 1em;
   position: relative;
 }
 
@@ -90,6 +88,19 @@ body,
   margin-bottom: 2em;
 }
 
+.game-mode {
+  margin: 1em;
+
+}
+
+.btn-mode{
+  border: none;
+  background-color: transparent;
+  padding: 0.5em;
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+
 .btn{
   font-size: 1rem;
   background-color: #4D5B9E;
@@ -98,6 +109,11 @@ body,
   padding: 1em 2.4em;
   border-radius: 10px;
   border: none;
+}
+
+.btn--disabled{
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
 .play-again{
@@ -118,7 +134,7 @@ body,
 }
 
 .bg--img{
-  position: absolute; 
+  position: fixed; 
   width: 150px;
   z-index: -10;
 }
@@ -129,22 +145,10 @@ body,
 }
 
 .bg--img--blue{
-  bottom: -5%;
-  left: -35%;
+  bottom: 0%;
+  left: -5%;
 }
 
-@media (min-width: 400px){
-  .bg--img{
-    width: 250px;
-  }
-
-  .bg--img--yellow{
-    top: -15%;
-    right: -30%;
-  }
-  
-  .bg--img--blue{
-    bottom: -5%;
-    left: -55%;
-  }
+@media (min-width: 500px){
+ 
 }
