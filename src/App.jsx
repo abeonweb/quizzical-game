@@ -1,12 +1,12 @@
 import { useReducer } from "react";
 import StartPage from "./StartPage";
 import { Route, Routes } from "react-router-dom";
-import Layout from "./Layout";
+import Layout from "./components/Layout";
 import Login from "./Login";
 import ScorePage from "./ScorePage";
 import Register from "./Register";
 import Game from "./Game";
-import { GameContext } from "./GameContext";
+import { GameContext } from "./context/GameContext";
 
 function reducer(state, action){
   if(action.type === "mode"){

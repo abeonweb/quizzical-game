@@ -1,8 +1,8 @@
 import React, {useState, useEffect, useContext} from "react"
-import Question from "./Question"
+import Question from "./components/Question"
 import { nanoid } from "nanoid"
 import { decode } from "he"
-import { GameContext } from "./GameContext"
+import { GameContext } from "./context/GameContext"
 
 
 export default function Game(props){
