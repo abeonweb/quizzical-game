@@ -3,9 +3,10 @@ import Question from "./components/Question"
 import { nanoid } from "nanoid"
 import { decode } from "he"
 import { GameContext } from "./context/GameContext"
+import Button from "./components/Button"
 
 
-export default function Game(props){
+export default function Game({start}){
     const state = useContext(GameContext);
     const [triviaData, setTriviaData] = useState([])
     const [gameData, setGameData] = useState({tally:0, checked:false})
@@ -110,12 +111,12 @@ export default function Game(props){
             </div>
             <div className="btn--container">
                 {triviaData.length>0 && !gameData.checked && 
-                    <button className="btn btn--check" onClick={checkAnswers}>Check answers</button>
+                    <Button start={start} onClick={checkAnswers} text={"Check answers"}/>
                 }
                 {gameData.checked && 
                     <div className="play-again">
                         <span className="result">You scored {gameData.tally}/{triviaData.length} correct answers</span>
-                        <button className="btn btn--game" onClick={props.play}>Play again</button>
+                        <Button start={start} onClick={props.play} text={"Play again"}></Button>
                     </div>
                 }
             </div>
