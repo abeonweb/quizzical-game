@@ -1,8 +1,8 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
-import blue from "./assets/blue.svg";
-import yellow from "./assets/yellow.svg";
+import blue from "../assets/blue.svg";
+import yellow from "../assets/yellow.svg";
 
 const Layout = () => {
   return (
