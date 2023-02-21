@@ -31,8 +31,8 @@ export default function App() {
       <main className="main">
         <Routes>
           <Route path="/quizzical-game" element={<Layout />}>
-            <Route index element={<StartPage state={state} dispatch={dispatch} />} />
-            <Route path="game" element={<Game />} />
+            <Route index element={<StartPage start={state.start} dispatch={dispatch} />} />
+            <Route path="game" element={<Game start={state.start}/>} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
             <Route path="score-page" element={<ScorePage />} />
