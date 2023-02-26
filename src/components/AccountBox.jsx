@@ -39,6 +39,19 @@ const StyledInput = styled.input`
   border-radius: 6px;
 `
 
+const StyledButton = styled.button`
+  width: 100%;
+  padding: 0.5em;
+  margin: 0 0 1em ;
+  border-radius: 6px;
+  border:  2px solid #c6c602;
+  background-color: #fdfd0a;
+
+  &:hover {
+    box-shadow: 4px 5px 10px 1px rgb(192, 192, 192);
+  }
+`
+
 const AccountBox = (props) => {
   const { title, subtitle } = props;
   return (
@@ -49,7 +62,7 @@ const AccountBox = (props) => {
         <StyledForm>
           <StyledInput type={"email"} placeholder={"email"} />
           <StyledInput type={"password"} placeholder={"password"} />
-          <StyledButton type={"button"}>Sign In</StyledButton>
+          <StyledButton type={"submit"}>Sign In</StyledButton>
         </StyledForm>
       </BoxContainer>
     </div>
