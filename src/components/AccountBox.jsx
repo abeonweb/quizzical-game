@@ -12,9 +12,9 @@ const BoxContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  `;
+`;
 
-const FormTitle = styled.h1`
+const HeaderTitle = styled.h1`
   font-size: 25px;
   color: #fff;
   font-weight: 700;
@@ -23,9 +23,9 @@ const FormTitle = styled.h1`
   margin: 0;
   position: relative;
   z-index: 10;
-  `;
+`;
 
-const FormSubTitle = styled.h2`
+const HeaderSubTitle = styled.h2`
   font-size: 18px;
   color: #fff;
   font-weight: 400;
@@ -34,17 +34,17 @@ const FormSubTitle = styled.h2`
   margin: 0 0 2em;
   position: relative;
   z-index: 10;
-  `;
+`;
 
 const Backdrop = styled.div`
   height: 530px;
   width: 160%;
   position: absolute;
   top: -290px;
-  left: -70px;
+  left: -120px;
   display: flex;
   flex-direction: column;
-  border-radius: 50%;
+  border-radius: 60%;
   transform: rotate(60deg);
   background: #fdfd0a;
   background: linear-gradient(
@@ -69,7 +69,7 @@ const StyledButton = styled.button`
   width: 100%;
   padding: 0.8em 0.5em;
   margin: 0 0 1em;
-  border-radius: 6px;
+  border-radius: 20px;
   border: none;
   background-color: rgba(241, 196, 15, 1);
 
@@ -78,13 +78,22 @@ const StyledButton = styled.button`
   }
 `;
 
+const HeaderContainer = styled.header`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+`
+
 const AccountBox = (props) => {
   const { title, subtitle } = props;
   return (
     <div>
       <BoxContainer>
-        <FormTitle>{title}</FormTitle>
-        <FormSubTitle>{subtitle}</FormSubTitle>
+        <HeaderContainer>
+          <HeaderTitle>{title}</HeaderTitle>
+          <HeaderSubTitle>{subtitle}</HeaderSubTitle>
+        </HeaderContainer>
         <Backdrop />
         <StyledForm>
           <StyledInput type={"email"} placeholder={"email"} />
