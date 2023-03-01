@@ -7,9 +7,7 @@ import AccountBox from "./components/AccountBox"
 
 const Login = () => {
   return (
-    <div>
       <AccountBox title ={"Login"} subtitle={"Welcome Back"} />
-    </div>
   )
 }
 
