@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const BoxContainer = styled.div`
   width: 300px;
-  height: 70vh;
+  height: 75vh;
   border: 2px solid #e2e2e2;
   border-radius: 20px;
   box-shadow: 5px 6px 10px rgba(15, 15, 15, 0.3);
@@ -12,6 +12,7 @@ const BoxContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  margin-top: 3em;
 `;
 
 const HeaderTitle = styled.h1`
@@ -60,8 +61,9 @@ const StyledForm = styled.form`
 `;
 const StyledInput = styled.input`
   width: 100%;
-  padding: 0.5em;
+  padding: 0.8em;
   margin: 0 0 1em;
+  border: 1px solid #bcbbbb;
   border-radius: 6px;
 `;
 
