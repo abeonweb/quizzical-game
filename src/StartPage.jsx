@@ -1,4 +1,4 @@
-import Button from "./components/Button";
+import Button from "./components/ButtonLink";
 
 export default function StartPage({start, dispatch}) {
   return (
@@ -29,7 +29,7 @@ export default function StartPage({start, dispatch}) {
         </button>
       </div>
 
-      <Button start={start} text={"Start quiz"} />
+      <Button start={start} link={"game"} text={"Start quiz"} />
     </div>
   );
 }
