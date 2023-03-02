@@ -19,7 +19,7 @@ function reducer(state, action){
 }
 
 const initialState = {
-  mode: "easy",
+  mode: "",
   start: false
 }
 
@@ -30,7 +30,7 @@ export default function App() {
     <GameContext.Provider value={state}>
       <main className="main">
         <Routes>
-          <Route path="/quizzical-game" element={<Layout />}>
+          <Route path="/" element={<Layout />}>
             <Route index element={<StartPage start={state.start} dispatch={dispatch} />} />
             <Route path="game" element={<Game start={state.start}/>} />
             <Route path="login" element={<Login />} />
