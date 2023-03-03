@@ -7,7 +7,7 @@ import AccountBox from "./components/AccountBox"
 
 const Login = () => {
   return (
-      <AccountBox title ={"Login"} subtitle={"Welcome Back"} />
+      <AccountBox title ={"Login"} subtitle={"Welcome Back"} info={{text:"Don't have an account?", link: "register"}} />
   )
 }
 
