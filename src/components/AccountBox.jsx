@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const BoxContainer = styled.div`
@@ -87,8 +88,13 @@ const HeaderContainer = styled.header`
 
 `
 
+const handleClick = (e)=>{
+  e.preventDefault()
+  console.log("Button clicked");
+}
+
 const AccountBox = (props) => {
-  const { title, subtitle } = props;
+  const { title, subtitle, info } = props;
   return (
     <div>
       <BoxContainer>
@@ -100,7 +106,8 @@ const AccountBox = (props) => {
         <StyledForm>
           <StyledInput type={"email"} placeholder={"email"} />
           <StyledInput type={"password"} placeholder={"password"} />
-          <StyledButton type={"submit"}>Sign In</StyledButton>
+          <StyledButton type={"submit"} onClick={handleClick}>Sign In</StyledButton>
+          <p>{info.text}<Link to={info.link}>{info.link =="login"? "Login" : "Register"}</Link></p>
         </StyledForm>
       </BoxContainer>
     </div>
