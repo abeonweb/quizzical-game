@@ -13,14 +13,14 @@ function reducer(state, action){
     return {
       ...state,
       mode: action.value,
-      start: true
+      start: "true"
     }
   }
 }
 
 const initialState = {
   mode: "",
-  start: false
+  start: "false"
 }
 
 export default function App() {
@@ -33,10 +33,10 @@ export default function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<StartPage start={state.start} dispatch={dispatch} />} />
             <Route path="game" element={<Game start={state.start}/>} />
+          </Route>
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
             <Route path="score-page" element={<ScorePage />} />
-          </Route>
         </Routes>
       </main>
     </GameContext.Provider>
