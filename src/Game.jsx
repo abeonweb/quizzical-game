@@ -4,7 +4,7 @@ import { nanoid } from "nanoid";
 import { decode } from "he";
 import { GameContext } from "./context/GameContext";
 import styled from "styled-components";
-import ButtonLink from "./components/ButtonLink";
+import StyledLink from "./components/StyledLink";
 
 const StyledButton = styled.button`
   font-size: 1rem;
@@ -123,11 +123,11 @@ export default function Game({ start }) {
             <span className="result">
               You scored {gameData.tally}/{triviaData.length} correct answers
             </span>
-            <ButtonLink
+            <StyledLink
               start={start}
               link={"/"}
               text={"Play again"}
-            ></ButtonLink>
+            ></StyledLink>
           </div>
         )}
       </div>

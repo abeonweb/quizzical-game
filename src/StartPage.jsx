@@ -1,4 +1,4 @@
-import Button from "./components/ButtonLink";
+import StyledLink from "./components/StyledLink";
 
 export default function StartPage({start, dispatch}) {
   return (
@@ -29,7 +29,7 @@ export default function StartPage({start, dispatch}) {
         </button>
       </div>
 
-      <Button start={start} link={"game"} text={"Start quiz"} />
+      <StyledLink start={start} link={"game"} text={"Start quiz"} />
     </div>
   );
 }
