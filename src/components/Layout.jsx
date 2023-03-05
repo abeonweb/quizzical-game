@@ -3,16 +3,57 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import blue from "../assets/blue.svg";
 import yellow from "../assets/yellow.svg";
+import styled from "styled-components";
 
+const BackgroundLayout = styled.main`
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  overflow: hidden;
+`
+
+const BackgroundImage = styled.img`
+  width: 150px;
+  position: absolute;
+  z-index: -1;
+  transform: rotate(0);
+  animation: spin 40s infinite ease;
+
+  &:first-of-type{
+    top: 30px;
+    right: 30px;
+  }
+
+  &:last-of-type{
+    bottom: 30px;
+    left: 30px;
+  }
+
+  @media (min-width: 400px){
+    width: 180px;
+  }
+
+  @keyframes spin {
+    0%{
+      transform: rotate(0);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+    
+  }
+`
 const Layout = () => {
   return (
     <>
       <Navbar />
-      <main className="main">
-        <img className="bg--img bg--img--yellow" src={yellow} alt="" />
-        <img className="bg--img bg--img--blue" src={blue} alt="" />
+      <BackgroundLayout>
+        <BackgroundImage src={yellow} alt="" />
         <Outlet />
-      </main>
+        <BackgroundImage src={blue} alt="" />
+      </BackgroundLayout>
     </>
   );
 };
