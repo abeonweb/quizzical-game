@@ -7,6 +7,19 @@ import ScorePage from "./ScorePage";
 import Register from "./Register";
 import Game from "./Game";
 import { GameContext } from "./context/GameContext";
+import styled from "styled-components"
+
+const StyledMain = styled.main`
+  margin: 0 auto;
+  width: 95%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1em;
+  position: relative;
+`
 
 function reducer(state, action){
   if(action.type === "mode"){
@@ -28,7 +41,7 @@ export default function App() {
 
   return (
     <GameContext.Provider value={state}>
-      <main className="main">
+      <StyledMain>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<StartPage start={state.start} dispatch={dispatch} />} />
@@ -38,7 +51,7 @@ export default function App() {
             <Route path="register" element={<Register />} />
             <Route path="score-page" element={<ScorePage />} />
         </Routes>
-      </main>
+      </StyledMain>
     </GameContext.Provider>
   );
 }
