@@ -10,19 +10,19 @@ export default function StartPage({mode, start, dispatch}) {
       <div className="game-mode">
         <p>Select a play mode</p>
         <button
-          className={`"btn-mode" ${mode == "easy"? "highlight": ""}`}
+          className={`${mode == "easy"? "highlight btn-mode": "btn-mode"}`}
           onClick={() => dispatch({ type: "mode", value: "easy" })}
         >
           Easy
         </button>
         <button
-          className={`"btn-mode" ${mode == "medium"? "highlight": ""}`}
+          className={`${mode == "medium"? "highlight btn-mode": "btn-mode"}`}
           onClick={() => dispatch({ type: "mode", value: "medium" })}
         >
           Medium
         </button>
         <button
-          className={`"btn-mode" ${mode == "hard"? "highlight": ""}`}
+          className={`${mode == "hard"? "highlight btn-mode": "btn-mode"}`}
           onClick={() => dispatch({ type: "mode", value: "hard" })}
         >
           Hard
