@@ -77,24 +77,27 @@ h1, p{
 }
 
 .game-mode {
-  margin: 1em;
+  margin: 0.5em;
+
+}
+
+.game-mode > p {
+  margin-bottom: 0.8em;
 
 }
 
 .btn-mode{
   border: none;
   background-color: transparent;
-  padding: 1em;
+  padding: 0.5em 1em;
   margin-right: 0.5em;
   cursor: pointer;
-  border-radius: 8px solid;
+  border-radius: 8px;
 }
 
 .highlight {
-  background-color: #293264;
+  background-color: #4d5b9e;
   color: #DBDEF0;
-  border: none;
-  border-radius: 8px solid;
 }
 
 
@@ -105,6 +108,7 @@ h1, p{
   align-items: center;
   text-align: center;
 }
+
 .result{
   margin-right: 1.5em;
   font-weight: 700;
@@ -115,7 +119,6 @@ h1, p{
   display: flex;
   justify-content: center;
 }
-
 
 .bg--img--yellow{
   top: -10%;
