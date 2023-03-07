@@ -90,7 +90,7 @@ h1, p{
   border: none;
   background-color: transparent;
   padding: 0.5em 1em;
-  margin-right: 0.5em;
+  margin: 0.5em 0;
   cursor: pointer;
   border-radius: 8px;
 }
