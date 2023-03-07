@@ -44,7 +44,7 @@ export default function App() {
       <StyledMain>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<StartPage start={state.start} dispatch={dispatch} />} />
+            <Route index element={<StartPage mode={state.mode} start={state.start} dispatch={dispatch} />} />
             <Route path="game" element={<Game start={state.start}/>} />
           </Route>
             <Route path="login" element={<Login />} />
