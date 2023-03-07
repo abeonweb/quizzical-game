@@ -1,6 +1,6 @@
 import StyledLink from "./components/StyledLink";
 
-export default function StartPage({start, dispatch}) {
+export default function StartPage({mode, start, dispatch}) {
   return (
     <div className="start-page">
       <h1 className="start-page--title">quizzical</h1>
@@ -10,19 +10,19 @@ export default function StartPage({start, dispatch}) {
       <div className="game-mode">
         <p>Select a play mode</p>
         <button
-          className="btn-mode"
+          className={`"btn-mode" ${mode == "easy"? "highlight": ""}`}
           onClick={() => dispatch({ type: "mode", value: "easy" })}
         >
           Easy
         </button>
         <button
-          className="btn-mode"
+          className={`"btn-mode" ${mode == "medium"? "highlight": ""}`}
           onClick={() => dispatch({ type: "mode", value: "medium" })}
         >
           Medium
         </button>
         <button
-          className="btn-mode"
+          className={`"btn-mode" ${mode == "hard"? "highlight": ""}`}
           onClick={() => dispatch({ type: "mode", value: "hard" })}
         >
           Hard
