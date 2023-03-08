@@ -28,36 +28,40 @@ export default function Game({ start }) {
     fetch(`https://opentdb.com/api.php?amount=10&difficulty=${state.mode}`)
       .then((res) => res.json())
       .then((data) => {
-        const newTriviaObjs = [];
         const results = data.results;
-        //Insert incorrect options and correct option in random position in new array
-        for (let i = 0; i < results.length; i++) {
-          let optionsArray = [
-            ...results[i].incorrect_answers,
-            results[i].correct_answer,
-          ].sort(() => (Math.random() > 0.5 ? 1 : -1));
-
-          //create an array of objects from each answer array
-          optionsArray = optionsArray.map((answer) => ({
-            value: decode(answer),
-            isHeld: false,
-            isCorrect: false,
-            isWrong: false,
-            id: nanoid(),
-          }));
-          //create new trivia question object
-          const triviaObj = {
-            question: decode(results[i].question),
-            correct: decode(results[i].correct_answer),
-            options: optionsArray,
-            id: nanoid(),
-          };
-
-          newTriviaObjs.push(triviaObj);
-        }
-        setTriviaData(newTriviaObjs);
+        setTriviaData(triviaDisplay(results));
       });
   }, []);
+
+  function triviaDisplay(results){
+    //Insert incorrect options and correct option in random position in new array
+    const newTriviaObjs = [];
+    for (let i = 0; i < results.length; i++) {
+      let optionsArray = [
+        ...results[i].incorrect_answers,
+        results[i].correct_answer,
+      ].sort(() => (Math.random() > 0.5 ? 1 : -1));
+
+      //create an array of objects from each answer array
+      optionsArray = optionsArray.map((answer) => ({
+        value: decode(answer),
+        isHeld: false,
+        isCorrect: false,
+        isWrong: false,
+        id: nanoid(),
+      }));
+      //create new trivia question object
+      const triviaObj = {
+        question: decode(results[i].question),
+        correct: decode(results[i].correct_answer),
+        options: optionsArray,
+        id: nanoid(),
+      };
+
+      newTriviaObjs.push(triviaObj);
+    }
+    return newTriviaObjs
+  }
 
   function toggleOption(oId, qId) {
     setTriviaData((prevTriviaData) => {
