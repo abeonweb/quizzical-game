@@ -19,7 +19,7 @@ const BackgroundImage = styled.img`
   position: absolute;
   z-index: -1;
   transform: rotate(0);
-  animation: spin 40s infinite ease;
+  animation: spin 30s infinite reverse ease;
 
   &:first-of-type{
     top: 30px;
