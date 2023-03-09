@@ -1,6 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
+  const DisplayOption = styled.span`
+    border: 1px solid #4d5b9e;
+    border-radius: 15px;
+    padding: 0.625em 1.5em;
+    margin: 0.75em;
+    cursor: pointer;
+    font-weight: 500;
+    text-align: center;
+  `;
+  
 export default function Option(props) {
   let styles = {};
 
@@ -29,24 +39,15 @@ export default function Option(props) {
     };
   }
 
-  const Option = styled.span`
-    border: 1px solid #4d5b9e;
-    border-radius: 15px;
-    padding: 0.625em 1.5em;
-    margin: 0.75em;
-    cursor: pointer;
-    font-weight: 500;
-    text-align: center;
-  `;
-  
+
   return (
-    <Option
+    <DisplayOption
       key={props.option.id}
       className="option"
       style={styles}
       onClick={() => props.toggleOption(props.option.id, props.qId)}
     >
       {props.option.value}
-    </Option>
+    </DisplayOption>
   );
 }
