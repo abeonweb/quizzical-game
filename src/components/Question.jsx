@@ -2,19 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Option from "./Option";
 
-export default function Question(props) {
-  const options = props.options.map((option) => {
-    return (
-      <Option
-        key={option.id}
-        qId={props.id}
-        checked={props.checked}
-        toggleOption={props.toggleOption}
-        option={option}
-      />
-    );
-  });
-
   const QuestionOptionsContainer = styled.div`
     border-bottom: 1px solid #dbdef0;
   `;
@@ -33,6 +20,20 @@ export default function Question(props) {
     font-size: 0.625rem;
     margin-bottom: 1em;
   `;
+  
+export default function Question(props) {
+  const options = props.options.map((option) => {
+    return (
+      <Option
+        key={option.id}
+        qId={props.id}
+        checked={props.checked}
+        toggleOption={props.toggleOption}
+        option={option}
+      />
+    );
+  });
+
 
   return (
     <QuestionOptionsContainer>
