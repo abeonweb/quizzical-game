@@ -2,76 +2,22 @@
   box-sizing: border-box;
 }
 
-html, body,
-h1, p{
+html,
+body,
+h1,
+p {
   margin: 0;
   padding: 0;
 }
 
 
-#root{
+#root {
   font-family: "Karla", sans-serif;
   color: #293264;
   display: flex;
   justify-content: center;
 }
 
-.game-questions--container{
-  margin: 2em 0;
-}
-
-.question-options--container{
-  border-bottom: 1px solid #DBDEF0;
-}
-
-.question{
-  font-family: "Karla", sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.3;
-  padding-right: 0.2em;
-}
-
-.options{
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 0.625rem;
-  margin-bottom: 1em;
-}
-
-.option{
-  border: 1px solid #4D5B9E;
-  border-radius: 15px;
-  padding: 0.625em 1.5em;
-  margin: 0.75em;
-  cursor: pointer;
-  font-weight: 500;
-  text-align: center;
-}
-
-.start-page{
-  font-family: "Inter", sans-serif;
-  background-color: transparent;
-  color: #293264;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.start-page--title{
-  font-family: "Karla", sans-serif;
-  color: #293264;
-  text-transform: capitalize;
-  margin-bottom: 0.5em;
-}
-
-.start-page--tagline{
-  line-height: 1.5;
-}
-
-.start-page--tagline, 
 .btn--container {
   margin-bottom: 2em;
 }
@@ -81,12 +27,12 @@ h1, p{
 
 }
 
-.game-mode > p {
+.game-mode>p {
   margin-bottom: 0.8em;
 
 }
 
-.btn-mode{
+.btn-mode {
   border: none;
   background-color: transparent;
   padding: 0.5em 1em;
@@ -100,36 +46,15 @@ h1, p{
   color: #DBDEF0;
 }
 
-
-
-.play-again{
+.play-again {
   display: flex;
   justify-content: space-around;
   align-items: center;
   text-align: center;
 }
 
-.result{
+.result {
   margin-right: 1.5em;
   font-weight: 700;
   font-size: 1rem;
-}
-
-.btn--container{
-  display: flex;
-  justify-content: center;
-}
-
-.bg--img--yellow{
-  top: -10%;
-  right: -10%;
-}
-
-.bg--img--blue{
-  bottom: 0%;
-  left: -5%;
-}
-
-@media (min-width: 500px){
- 
 }
