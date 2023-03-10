@@ -16,8 +16,30 @@ const StyledButton = styled.button`
   text-decoration: none;
   cursor: pointer;
   opacity: 1;
-`;
+  `;
 
+  const questions = triviaData.map((trivia) => (
+    <Question
+      key={trivia.id}
+      id={trivia.id}
+      correct={trivia.correct}
+      question={trivia.question}
+      options={trivia.options}
+      toggleOption={toggleOption}
+      checked={gameData.checked}
+    />
+  ));
+  
+  const GameQuestionsContainer = styled.div`
+    margin: 2em 0;
+  `;
+  
+  const ButtonContainer = styled.div`
+    margin-bottom: 2em;
+    display: flex;
+    justify-content: center;
+  `;
+  
 export default function Game({ start }) {
   const state = useContext(GameContext);
   const [triviaData, setTriviaData] = useState([]);
@@ -33,7 +55,7 @@ export default function Game({ start }) {
       });
   }, []);
 
-  function triviaDisplay(results){
+  function triviaDisplay(results) {
     //Insert incorrect options and correct option in random position in new array
     const newTriviaObjs = [];
     for (let i = 0; i < results.length; i++) {
@@ -60,7 +82,7 @@ export default function Game({ start }) {
 
       newTriviaObjs.push(triviaObj);
     }
-    return newTriviaObjs
+    return newTriviaObjs;
   }
 
   function toggleOption(oId, qId) {
@@ -103,22 +125,11 @@ export default function Game({ start }) {
     setGameData({ tally: gameTally, checked: true });
   }
 
-  const questions = triviaData.map((trivia) => (
-    <Question
-      key={trivia.id}
-      id={trivia.id}
-      correct={trivia.correct}
-      question={trivia.question}
-      options={trivia.options}
-      toggleOption={toggleOption}
-      checked={gameData.checked}
-    />
-  ));
 
   return (
     <div>
-      <div className="game-questions--container">{questions}</div>
-      <div className="btn--container">
+      <GameQuestionsContainer>{questions}</GameQuestionsContainer>
+      <ButtonContainer>
         {triviaData.length > 0 && !gameData.checked && (
           <StyledButton onClick={checkAnswers}>Check answers</StyledButton>
         )}
@@ -134,7 +145,7 @@ export default function Game({ start }) {
             ></StyledLink>
           </div>
         )}
-      </div>
+      </ButtonContainer>
     </div>
   );
 }
