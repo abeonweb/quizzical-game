@@ -18,6 +18,32 @@ const StyledButton = styled.button`
   opacity: 1;
   `;
 
+
+const GameQuestionsContainer = styled.div`
+    margin: 2em 0;
+    `;
+  
+  const ButtonContainer = styled.div`
+    margin-bottom: 2em;
+    display: flex;
+    justify-content: center;
+    `;
+
+export default function Game({ start }) {
+  const state = useContext(GameContext);
+  const [triviaData, setTriviaData] = useState([]);
+  const [gameData, setGameData] = useState({ tally: 0, checked: false });
+  
+  //get the trivia questions and update trivia data
+  useEffect(() => {
+    fetch(`https://opentdb.com/api.php?amount=10&difficulty=${state.mode}`)
+    .then((res) => res.json())
+    .then((data) => {
+      const results = data.results;
+      setTriviaData(triviaDisplay(results));
+    });
+  }, []);
+  
   const questions = triviaData.map((trivia) => (
     <Question
       key={trivia.id}
@@ -30,31 +56,6 @@ const StyledButton = styled.button`
     />
   ));
   
-  const GameQuestionsContainer = styled.div`
-    margin: 2em 0;
-  `;
-  
-  const ButtonContainer = styled.div`
-    margin-bottom: 2em;
-    display: flex;
-    justify-content: center;
-  `;
-  
-export default function Game({ start }) {
-  const state = useContext(GameContext);
-  const [triviaData, setTriviaData] = useState([]);
-  const [gameData, setGameData] = useState({ tally: 0, checked: false });
-
-  //get the trivia questions and update trivia data
-  useEffect(() => {
-    fetch(`https://opentdb.com/api.php?amount=10&difficulty=${state.mode}`)
-      .then((res) => res.json())
-      .then((data) => {
-        const results = data.results;
-        setTriviaData(triviaDisplay(results));
-      });
-  }, []);
-
   function triviaDisplay(results) {
     //Insert incorrect options and correct option in random position in new array
     const newTriviaObjs = [];
