@@ -6,7 +6,7 @@ import Option from "./Option";
     border-bottom: 1px solid #dbdef0;
   `;
 
-  const Question = styled.p`
+  const QuestionElement = styled.p`
     font-family: "Karla", sans-serif;
     font-size: 1rem;
     font-weight: 700;
@@ -20,7 +20,7 @@ import Option from "./Option";
     font-size: 0.625rem;
     margin-bottom: 1em;
   `;
-  
+
 export default function Question(props) {
   const options = props.options.map((option) => {
     return (
@@ -37,7 +37,7 @@ export default function Question(props) {
 
   return (
     <QuestionOptionsContainer>
-      <Question>{props.question}</Question>
+      <QuestionElement>{props.question}</QuestionElement>
       <Options>{options}</Options>
     </QuestionOptionsContainer>
   );
