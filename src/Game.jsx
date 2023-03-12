@@ -39,8 +39,7 @@ export default function Game({ start }) {
     fetch(`https://opentdb.com/api.php?amount=10&difficulty=${state.mode}`)
     .then((res) => res.json())
     .then((data) => {
-      const results = data.results;
-      setTriviaData(triviaDisplay(results));
+      setTriviaData(shuffleOptions(data.results));
     });
   }, []);
   
@@ -55,8 +54,8 @@ export default function Game({ start }) {
       checked={gameData.checked}
     />
   ));
-  
-  function triviaDisplay(results) {
+
+  function shuffleOptions(results) {
     //Insert incorrect options and correct option in random position in new array
     const newTriviaObjs = [];
     for (let i = 0; i < results.length; i++) {
