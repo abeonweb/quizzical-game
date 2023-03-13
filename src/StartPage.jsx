@@ -24,6 +24,50 @@ const Tagline = styled.p`
   margin-bottom: 2em;
 `
 
+const GameMode = styled.div`
+  margin: 0.5em;
+`
+
+const GameModeTitle = styled.p`
+  margin-bottom: 0.8em;
+`
+
+// const ModeButton = styled.button`
+//   border: none;
+//   background-color: transparent;
+//   padding: 0.5em 1em;
+//   margin: 0.5em 0;
+//   cursor: pointer;
+//   border-radius: 8px;
+// `
+const ModeButtonEasy = styled.button`
+  border: none;
+  background-color: ${({mode}) => mode == "easy"? "#4d5b9e": "transparent"};
+  color: ${({mode}) => mode == "easy"? "#DBDEF0": "black"};
+  padding: 0.5em 1em;
+  margin: 0.5em 0;
+  cursor: pointer;
+  border-radius: 8px;
+`
+const ModeButtonMedium = styled.button`
+  border: none;
+  background-color: ${({mode}) => mode == "medium"? "#4d5b9e": "transparent"};
+  color: ${({mode}) => mode == "medium"? "#DBDEF0": "black"};
+  padding: 0.5em 1em;
+  margin: 0.5em 0;
+  cursor: pointer;
+  border-radius: 8px;
+`
+const ModeButtonHard = styled.button`
+  border: none;
+  background-color: ${({mode}) => mode == "hard"? "#4d5b9e": "transparent"};
+  color: ${({mode}) => mode == "hard"? "#DBDEF0": "black"};
+  padding: 0.5em 1em;
+  margin: 0.5em 0;
+  cursor: pointer;
+  border-radius: 8px;
+`
+
 export default function StartPage({ mode, start, dispatch }) {
   return (
     <StartPageContainer>
@@ -31,27 +75,27 @@ export default function StartPage({ mode, start, dispatch }) {
       <Tagline>
         A fun trivia game you can enjoy with friends!
       </Tagline>
-      <div className="game-mode">
-        <p>Select a play mode</p>
-        <button
-          className={`${mode == "easy" ? "highlight btn-mode" : "btn-mode"}`}
+      <GameMode>
+        <GameModeTitle>Select a play mode</GameModeTitle>
+        <ModeButtonEasy
+          mode = {mode}
           onClick={() => dispatch({ type: "mode", value: "easy" })}
         >
           Easy
-        </button>
-        <button
-          className={`${mode == "medium" ? "highlight btn-mode" : "btn-mode"}`}
+        </ModeButtonEasy>
+        <ModeButtonMedium
+          mode = {mode}
           onClick={() => dispatch({ type: "mode", value: "medium" })}
         >
           Medium
-        </button>
-        <button
-          className={`${mode == "hard" ? "highlight btn-mode" : "btn-mode"}`}
+        </ModeButtonMedium>
+        <ModeButtonHard
+          mode = {mode}
           onClick={() => dispatch({ type: "mode", value: "hard" })}
         >
           Hard
-        </button>
-      </div>
+        </ModeButtonHard>
+      </GameMode>
 
       <StyledLink start={start} link={"game"} text={"Start quiz"} />
     </StartPageContainer>
