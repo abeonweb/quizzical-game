@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 import blue from "../assets/blue.svg";
 import yellow from "../assets/yellow.svg";
 import styled from "styled-components";
@@ -54,6 +55,7 @@ const Layout = () => {
         <Outlet />
         <BackgroundImage src={blue} alt="" />
       </BackgroundLayout>
+      <Footer />
     </>
   );
 };
