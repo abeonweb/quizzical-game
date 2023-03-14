@@ -8,7 +8,7 @@ const Register = () => {
     <AccountBox
       title={"Register"}
       subtitle={"Create an Account for free."}
-      info={{ text: "Already have an account?", link: "login" }}
+      info={{ text: "Already have an account?", link: "/login" }}
     />
   );
 };

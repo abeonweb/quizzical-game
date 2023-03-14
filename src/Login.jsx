@@ -10,7 +10,7 @@ const Login = () => {
       <AccountBox 
       title ={"Login"} 
       subtitle={"Welcome Back"} 
-      info={{text:"Don't have an account?", link: "register"}} 
+      info={{text:"Don't have an account?", link: "/register"}} 
     />
   )
 }
