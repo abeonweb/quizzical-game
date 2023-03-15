@@ -18,33 +18,6 @@ p {
   justify-content: center;
 }
 
-.btn--container {
-  margin-bottom: 2em;
-}
-
-.game-mode {
-  margin: 0.5em;
-
-}
-
-.game-mode>p {
-  margin-bottom: 0.8em;
-
-}
-
-.btn-mode {
-  border: none;
-  background-color: transparent;
-  padding: 0.5em 1em;
-  margin: 0.5em 0;
-  cursor: pointer;
-  border-radius: 8px;
-}
-
-.highlight {
-  background-color: #4d5b9e;
-  color: #DBDEF0;
-}
 
 .play-again {
   display: flex;
