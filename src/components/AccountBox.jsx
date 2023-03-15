@@ -85,13 +85,12 @@ const HeaderContainer = styled.header`
   width: 100%;
   display: flex;
   flex-direction: column;
+`;
 
-`
-
-const handleClick = (e)=>{
-  e.preventDefault()
+const handleClick = (e) => {
+  e.preventDefault();
   console.log("Button clicked");
-}
+};
 
 const AccountBox = (props) => {
   const { title, subtitle, info } = props;
@@ -106,8 +105,15 @@ const AccountBox = (props) => {
         <StyledForm>
           <StyledInput type={"email"} placeholder={"email"} />
           <StyledInput type={"password"} placeholder={"password"} />
-          <StyledButton type={"submit"} onClick={handleClick}>Sign In</StyledButton>
-          <p>{info.text}<Link to={info.link}>{info.link =="login"? "Login" : "Register"}</Link></p>
+          <StyledButton type={"submit"} onClick={handleClick}>
+            Sign In
+          </StyledButton>
+          <p>
+            {info.text}
+            <Link to={info.link}>
+              {info.link == "login" ? "Login" : "Register"}
+            </Link>
+          </p>
         </StyledForm>
       </BoxContainer>
     </div>
