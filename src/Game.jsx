@@ -20,7 +20,7 @@ const StyledButton = styled.button`
 
 
 const GameQuestionsContainer = styled.div`
-    margin: 2em 0;
+    margin: 2em 0.5em;
     `;
   
   const ButtonContainer = styled.div`
@@ -36,7 +36,7 @@ export default function Game({ start }) {
   
   //get the trivia questions and update trivia data
   useEffect(() => {
-    fetch(`https://opentdb.com/api.php?amount=10&difficulty=${state.mode}`)
+    fetch(`https://opentdb.com/api.php?amount=5&difficulty=${state.mode}`)
     .then((res) => res.json())
     .then((data) => {
       setTriviaData(shuffleOptions(data.results));
@@ -124,7 +124,6 @@ export default function Game({ start }) {
     setTriviaData(temp);
     setGameData({ tally: gameTally, checked: true });
   }
-
 
   return (
     <div>
