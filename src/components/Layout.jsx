@@ -16,20 +16,20 @@ const BackgroundLayout = styled.main`
 `
 
 const BackgroundImage = styled.img`
-  width: 150px;
+  width: 120px;
   position: absolute;
   z-index: -1;
   transform: rotate(0);
   animation: spin 30s infinite reverse ease;
 
   &:first-of-type{
-    top: 30px;
-    right: 30px;
+    top: 100px;
+    right: 50px;
   }
 
   &:last-of-type{
-    bottom: 30px;
-    left: 30px;
+    bottom: 100px;
+    left: 50px;
   }
 
   @media (min-width: 400px){
