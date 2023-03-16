@@ -10,14 +10,13 @@ import { GameContext } from "./context/GameContext";
 import styled from "styled-components"
 
 const StyledMain = styled.main`
-  margin: 0 auto;
-  width: 95%;
-  max-width: 1000px;
+  margin: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 1em;
+  padding: 0;
   position: relative;
 `
 
