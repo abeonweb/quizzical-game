@@ -11,7 +11,7 @@ import Option from "./Option";
     font-size: 1rem;
     font-weight: 700;
     line-height: 1.3;
-    padding: 0 1.2em;
+    padding: 1em 1.2em;
     @media (min-width: 400px){ 
       /* margin: 2em 4em; */
       padding: 0 2em;
