@@ -11,7 +11,11 @@ import Option from "./Option";
     font-size: 1rem;
     font-weight: 700;
     line-height: 1.3;
-    padding-right: 0.2em;
+    padding: 0 1.2em;
+    @media (min-width: 400px){ 
+      /* margin: 2em 4em; */
+      padding: 0 2em;
+    }
   `;
 
   const Options = styled.div`
@@ -19,6 +23,12 @@ import Option from "./Option";
     flex-wrap: wrap;
     font-size: 0.625rem;
     margin-bottom: 1em;
+    padding: 0 1em;
+
+    @media (min-width: 400px){ 
+      margin: 2em 4em;
+      padding: 0 1em;
+    }
   `;
 
 export default function Question(props) {
