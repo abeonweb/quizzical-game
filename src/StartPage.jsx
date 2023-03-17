@@ -97,7 +97,7 @@ export default function StartPage({ mode, start, dispatch }) {
         </ModeButtonHard>
       </GameMode>
 
-      <StyledLink start={start} link={"game"} text={"Start quiz"} />
+      {mode? <StyledLink start={start} link={"game"} text={"Start quiz"} />: <StyledLink start={false} link={""} text={"Start quiz"} />}
     </StartPageContainer>
   );
 }
