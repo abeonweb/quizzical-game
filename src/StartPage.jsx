@@ -76,7 +76,7 @@ export default function StartPage({ mode, start, dispatch }) {
         A fun trivia game you can enjoy with friends!
       </Tagline>
       <GameMode>
-        <GameModeTitle>Select a play mode</GameModeTitle>
+        <GameModeTitle>Select a play mode to start</GameModeTitle>
         <ModeButtonEasy
           mode = {mode}
           onClick={() => dispatch({ type: "mode", value: "easy" })}
